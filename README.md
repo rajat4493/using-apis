@@ -1,6 +1,6 @@
 # using-apis
 
-Synopsis :
+<h1><b>Synopsis :</b></h1>
 
 Using different public/(private and free trial) API's to develop scripts and utilizing them for day-to-day activities.
 
