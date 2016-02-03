@@ -1,2 +1,14 @@
 # using-apis
-Scripts that use public api's.(Using PDFTables API - Credit goes to PDFTables)
+
+Synopsis :
+
+Using different public/(private and free trial) API's to develop scripts and utilizing them for day-to-day activities.
+
+Motivation
+
+Instead of reinventing the wheel, we can use the API's provided online by the websites and utilize the services.
+
+API Reference
+
+Mentioned in each script.
+
