@@ -1,4 +1,5 @@
-# using-apis
+# PDFTables_PDF2EXCEL
+
 <h2><b>Synopsis : </b></h2>
 
 Using <a href="https://pdftables.com/">PDFTables</a> API to convert PDF files into Excel with proper formatting.
