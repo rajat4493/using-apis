@@ -1,0 +1,56 @@
+#-----------------------------------START--------------------------------------#
+
+import requests
+import tkinter as tk
+from tkinter import filedialog
+from tkinter import *
+import warnings
+
+#--------------------------------INPUT_API_KEY---------------------------------#
+
+master = Tk()
+e = Entry(master)
+e.pack()
+
+e.focus_set()
+
+def get_key():
+    global string       #Global Variable to use the input throughout the script
+    string=(e.get())
+    e.insert(INSERT, string)
+    master.destroy()
+
+c = Button(master, text = "Submit", width = 20, command = get_key)
+c.pack()
+
+mainloop()
+
+#------------------------------------------------------------------------------#
+
+root=tk.Tk()
+root.withdraw()
+
+
+#-----------------------------SELECT_SOURCE_PDF--------------------------------#
+
+Label(root, text="API Key").grid(row=0)
+file=tk.filedialog.askopenfile(title="Please select the PDF file",)
+
+
+#--------------------------SELECT_DESTINATION_EXCEL----------------------------#
+
+warnings.warn("depricated",DeprecationWarning)
+dfile=tk.filedialog.asksaveasfilename(defaultextension='.csv',filetypes=[("Excel","*.xlsx"),("All files","*.*")])
+
+
+#-----------------------------CALLING_THE_API----------------------------------#
+
+
+files = {'f': ('pdf_nandi.pdf', open((file.name), 'rb'))}
+response = requests.post("https://pdftables.com/api?key="+string+"&format=xlsx-single", files=files, verify=False)
+
+response.raise_for_status() # ensure we notice bad responses
+with open(dfile, "wb") as f:
+    f.write(response.content)
+          
+#---------------------------*/END_OF_SCRIPT/*-----------------------------#
